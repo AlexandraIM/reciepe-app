@@ -1,9 +1,11 @@
 {
   "name": "recipes-app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Alexandra Imereli",
   "private": true,
+  "repository": {
+    "url": "https://github.com/AlexandraIM/reciepe-app.git"
+  },
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
