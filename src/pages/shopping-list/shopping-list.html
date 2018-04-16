@@ -1,9 +1,4 @@
-<!--
-  Generated template for the ShoppingListPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar color="dark">
@@ -13,6 +8,42 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding >
+  <form #f="ngForm" (ngSubmit)="onAddItem(f)" >
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Name</ion-label>
+        <ion-input 
+        type="text" 
+        name="name" 
+        placeholder="Product"
+        ngModel
+        required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Amount</ion-label>
+        <ion-input 
+        type="number"
+         name="ammount" 
+         placeholder="0"
+         ngModel
+         required></ion-input>
+      </ion-item>
+    </ion-list>
+    <button type="submit" ion-button block [disabled]="!f.valid">Add</button>
+  </form>
+  <ion-grid class="ingList" *ngIf="ingredients.length > 0" text-center>
+    <ion-row class="">
+        <ion-col col-5>Name</ion-col>
+        <ion-col col-5>Ammount</ion-col>
+        <ion-col col-2></ion-col>
+    </ion-row>
+    <ion-row  *ngFor="let ingredient of ingredients">
+      <ion-col col-5>{{ingredient.name}}</ion-col>
+      <ion-col col-5>{{ingredient.ammount}}</ion-col>
+      <ion-col col-2>
+        <ion-icon name="trash" (click)="onRemove(index)"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

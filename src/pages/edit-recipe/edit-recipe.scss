@@ -1,3 +1,6 @@
 page-edit-recipe {
-
+    .title{
+        background: color($colors, "dark");
+        color: color($colors, "primary");
+    }
 }
