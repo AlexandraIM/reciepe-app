@@ -1,6 +1,8 @@
+import { Recipe } from './../../models/recipe';
+import { RecipesService } from './../../services/recipe';
 import { EditRecipePage } from './../edit-recipe/edit-recipe';
 import { RecipePage } from './../recipe/recipe';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
@@ -8,11 +10,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-recipes',
   templateUrl: 'recipes.html',
 })
-export class RecipesPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+export class RecipesPage{
+  recepies : Recipe[] = [];
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private recipesService: RecipesService) {
   }
 
   addNewRecepie(){
     this.navCtrl.push(EditRecipePage, {mode: "New"});
+  }
+
+  ionViewWillEnter(){
+    this.recepies = this.recipesService.getRecipe();
+  }
+
+  openRecipe(index: number, recipe: Recipe){
+    this.recipesService.updateRecipe(index, recipe);
   }
 }
