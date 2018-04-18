@@ -20,7 +20,8 @@
     *ngFor="let recipe of recepies; let i = index;"
     (click)="openRecipe(i, recipe)">
       <h2>{{recipe.title}}</h2>
-      <ion-note item-end>{{recipe.description}}</ion-note>
+      <p>{{recipe.description}}</p>
+      <ion-note item-end>{{recipe.difficulty}}</ion-note>
     </button>
   </ion-list>
 </ion-content>

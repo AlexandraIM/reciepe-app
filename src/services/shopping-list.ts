@@ -8,7 +8,6 @@ export class ShoppingListService {
         if(ingredient){
             this.ingredients.push(ingredient);
         }
-        console.log(this.ingredients);
     }
 
     addIngredients(ingredients: Ingredient[]){

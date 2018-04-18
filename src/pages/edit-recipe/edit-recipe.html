@@ -32,11 +32,27 @@
     block 
     (click)="onManageIngredients()"> Mange Ingredients</button>
     <ion-list formArrayName="ingredients">
-        <ion-item
+        <!--<ion-item
           *ngFor="let igControl of recipieForm.get('ingredients').controls; let i = index">
           <ion-label floating>Name</ion-label>
           <ion-input type="text" [formControlName]="i"></ion-input>
-        </ion-item>
+        </ion-item-->
+        <div *ngFor="let igControl of recipieForm.get('ingredients').controls; let i = index">
+          <ion-list [formGroupName]="i">
+            <ion-row>
+              <ion-col width-75>
+                <ion-item>
+                  <ion-input type="text" formControlName="name"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  <ion-input type="number" formControlName="ammount"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-list>
+        </div>
       </ion-list>
     <button type="submit" ion-button block [disabled]="!recipieForm.valid">{{mode}}</button>
   </form>

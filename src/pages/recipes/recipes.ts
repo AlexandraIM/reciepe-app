@@ -3,7 +3,7 @@ import { RecipesService } from './../../services/recipe';
 import { EditRecipePage } from './../edit-recipe/edit-recipe';
 import { RecipePage } from './../recipe/recipe';
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,7 +14,8 @@ export class RecipesPage{
   recepies : Recipe[] = [];
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-    private recipesService: RecipesService) {
+    private recipesService: RecipesService,
+    private modalCtrl: ModalController) {
   }
 
   addNewRecepie(){
@@ -26,6 +27,8 @@ export class RecipesPage{
   }
 
   openRecipe(index: number, recipe: Recipe){
-    this.recipesService.updateRecipe(index, recipe);
+    this.navCtrl.push(RecipePage, {
+      index: index, recipe : recipe
+    });
   }
 }
