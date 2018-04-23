@@ -50,21 +50,36 @@ $colors: (
 // iOS only Sass variables can go here
 
 $tabs-ios-tab-text-color-active : #FDDC22;
-
+$background-ios-color: #F7F2D4;
+$list-ios-background-color:#F7F2D4;
+$toolbar-ios-background:#263409;
+$button-ios-background-color:#66B032;
+$label-ios-text-color:#263409;
+$toolbar-ios-title-text-color:#FDDC22;
+$tabs-ios-background: #263409;
+$toolbar-ios-button-color: #FDDC22;
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
-
+$background-md-color: #F7F2D4;
+$list-md-background-color:#F7F2D4;
+$toolbar-md-background:#263409;
+$button-md-background-color:#66B032;
+$label-md-text-color:#263409;
+$toolbar-md-title-text-color:#FDDC22;
 
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
-
-
+$background-wp-color: #F7F2D4;
+$list-wp-background-color:#F7F2D4;
+$toolbar-wp-background:#263409;
+$button-wp-background-color:#66B032;
+$label-wp-text-color:#263409;
+$toolbar-wp-title-text-color:#FDDC22;
 
 // App Theme
 // --------------------------------------------------

@@ -2,10 +2,14 @@ import { EditRecipePageModule } from './../edit-recipe/edit-recipe.module';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { RecipesPage } from './recipes';
+import { DBOptionsPage } from '../db-options/db-options';
 
 @NgModule({
   declarations: [
-    RecipesPage,
+    RecipesPage
+  ],
+  entryComponents: [
+    DBOptionsPage
   ],
   imports: [
     EditRecipePageModule,

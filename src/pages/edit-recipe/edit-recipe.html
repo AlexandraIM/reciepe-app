@@ -10,7 +10,7 @@
 
 <ion-content padding>
   <form [formGroup]="recipieForm" (ngSubmit)="onSubmit()" >
-    <ion-list>
+    <ion-list >
       <ion-item>
         <ion-label floating>Title</ion-label>
         <ion-input type="text" formControlName="title"></ion-input>
@@ -31,21 +31,16 @@
     clear 
     block 
     (click)="onManageIngredients()"> Mange Ingredients</button>
-    <ion-list formArrayName="ingredients">
-        <!--<ion-item
-          *ngFor="let igControl of recipieForm.get('ingredients').controls; let i = index">
-          <ion-label floating>Name</ion-label>
-          <ion-input type="text" [formControlName]="i"></ion-input>
-        </ion-item-->
+    <ion-list formArrayName="ingredients" no-lines>
         <div *ngFor="let igControl of recipieForm.get('ingredients').controls; let i = index">
-          <ion-list [formGroupName]="i">
+          <ion-list [formGroupName]="i" no-padding>
             <ion-row>
-              <ion-col width-75>
+              <ion-col col-8 no-padding>
                 <ion-item>
                   <ion-input type="text" formControlName="name"></ion-input>
                 </ion-item>
               </ion-col>
-              <ion-col>
+              <ion-col col-4 no-padding>
                 <ion-item>
                   <ion-input type="number" formControlName="ammount"></ion-input>
                 </ion-item>

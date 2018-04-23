@@ -1,3 +1,6 @@
+import { DBOptionsPage } from './../pages/db-options/db-options';
+import { AuthService } from './../services/auth';
+import { SingInPageModule } from './../pages/sing-in/sing-in.module';
 import { RecipesService } from './../services/recipe';
 import { ShoppingListService } from './../services/shopping-list';
 import { RecipePageModule } from './../pages/recipe/recipe.module';
@@ -12,18 +15,24 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+import { SingUpPageModule } from '../pages/sing-up/sing-up.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MyApp,
-    TabsPage
+    TabsPage,
+    DBOptionsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     RecipesPageModule,
     ShoppingListPageModule,
-    RecipePageModule
+    RecipePageModule,
+    SingInPageModule,
+    SingUpPageModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,7 +44,8 @@ import { MyApp } from './app.component';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ShoppingListService,
-    RecipesService
+    RecipesService,
+    AuthService
   ]
 })
 export class AppModule {}

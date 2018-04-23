@@ -9,7 +9,7 @@
 
 
 <ion-content padding>
-  <ion-item>
+  <ion-card>
     <ion-grid text-center>
       <ion-row>
         <ion-col>
@@ -26,11 +26,11 @@
     <ion-list>
       <ion-grid>
         <ion-row>
-          <ion-col>Name</ion-col>
+          <ion-col col-8>Name</ion-col>
           <ion-col>Ammount</ion-col>
         </ion-row>
         <ion-row *ngFor="let item of recipe.ingredients">
-          <ion-col>
+          <ion-col col-8>
             {{item.name}}
           </ion-col>
           <ion-col>
@@ -55,5 +55,5 @@
       </ion-row>
     </ion-grid>
   
-  </ion-item>
+  </ion-card>
 </ion-content>
